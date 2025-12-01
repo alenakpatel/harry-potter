@@ -65,7 +65,7 @@ export default function CharacterDetail() {
 
     const houseTextColors: Record<string, string> = {
         Gryffindor: "text-red-700",
-        Hufflepuff: "text-yellow-600", // Using a slightly darker yellow for better visibility on white background
+        Hufflepuff: "text-yellow-600",
         Ravenclaw: "text-blue-700",
         Slytherin: "text-green-700"
     };
@@ -77,7 +77,6 @@ export default function CharacterDetail() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="md:flex">
-                    {/* Image Section - You'll need to import Image from next/image */}
                     <div className="md:flex-shrink-0">
                         {character.image ? (
                             <img
