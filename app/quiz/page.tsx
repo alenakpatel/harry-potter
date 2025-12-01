@@ -3,7 +3,6 @@
 import One from "../components/One";
 
 
-
 export default function Quiz(){
 
     const score = 0;
