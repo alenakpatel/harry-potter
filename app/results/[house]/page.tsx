@@ -53,7 +53,7 @@ export default function House() {
             </div>
 
             {/* Characters Section */}
-            <div className="w-full px-4 py-12">
+            <div className="w-full py-12 flex flex-col items-center">
                 <h2 className="text-3xl font-bold text-center text-black font-[MedievalSharp]">
                     Notable {house} Members
                 </h2>
@@ -80,7 +80,7 @@ export default function House() {
                 )}
 
                 {!loading && !error && characters.length > 0 && (
-                    <div className="pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    <div className="pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
                         {characters.map((character) => (
                             <CharacterCard key={character.id} character={character} />
                         ))}
