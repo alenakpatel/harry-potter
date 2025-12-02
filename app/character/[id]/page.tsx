@@ -1,5 +1,5 @@
 "use client";
-
+import '../../globals.css'
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import {Character, getCharacterById} from "@/app/lib/api";
@@ -38,25 +38,25 @@ export default function CharacterDetail() {
 
     if (loading) {
         return (
-            <div className="text-center py-20">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-                <p className="mt-4 text-gray-600">Loading character details...</p>
+            <div className="bg-[url(/background2.jpg)] bg-contain bg-center bg-repeat min-h-screen w-full text-center py-20">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-pink-950"></div>
+                <p className="mt-4 text-white font-[MedievalSharp]">Loading character details...</p>
             </div>
         );
     }
 
     if (error) {
         return (
-            <div className="text-center py-20">
-                <p className="text-red-600 text-xl">{error}</p>
+            <div className="bg-[url(/background2.jpg)] bg-contain bg-center bg-repeat min-h-screen w-full text-center py-20">
+                <p className="text-red-600 text-xl font-[MedievalSharp]">{error}</p>
             </div>
         );
     }
 
     if (!character) {
         return (
-            <div className="text-center py-20">
-                <p className="text-gray-600 text-xl">
+            <div className="bg-[url(/background2.jpg)] bg-contain bg-center bg-repeat min-h-screen w-full text-center py-20">
+                <p className="text-white text-xl font-[MedievalSharp]">
                     No character data available.
                 </p>
             </div>
@@ -75,8 +75,8 @@ export default function CharacterDetail() {
 
     // Simple layout to display some details
     return (
-        <div className="container mx-auto px-4 py-12">
-            <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+        <div className="bg-[url(/background2.jpg)] bg-contain bg-center bg-repeat min-h-screen w-full flex items-center justify-center px-4 py-12">
+            <div className="max-w-4xl w-full bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="md:flex">
                     <div className="md:flex-shrink-0">
                         <div className="relative h-96 w-full md:w-96">
@@ -91,10 +91,10 @@ export default function CharacterDetail() {
 
                     {/* Details Section */}
                     <div className="p-8">
-                        <h1 className={`font-extrabold text-4xl mb-2 ${houseTextColor}`}>{character.name}</h1>
-                        <p className="font-bold text-xl text-black mb-6">{character.species}</p>
+                        <h1 className={`font-extrabold text-4xl mb-2 font-[MedievalSharp] ${houseTextColor}`}>{character.name}</h1>
+                        <p className="font-bold text-xl text-black mb-6 font-[MedievalSharp]">{character.species}</p>
 
-                        <div className="space-y-4 text-black">
+                        <div className="space-y-4 text-black font-[MedievalSharp]">
                             <p><strong>House:</strong> <span className={`font-semibold ${houseTextColor}`}>{character.house || 'N/A'}</span></p>
                             <p><strong>Patronus:</strong> {character.patronus || 'N/A'}</p>
                             <p><strong>Ancestry:</strong> {character.ancestry || 'N/A'}</p>

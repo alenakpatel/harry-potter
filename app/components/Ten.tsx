@@ -54,7 +54,7 @@ export default function QuestionTen({value}: { value: number }) {
             <div className="flex flex-row justify-center items-center">
                 <div className="inline">
                     <button onClick={() => addScore(3)}>
-                        <Image src="/apple.png" alt="App Logo" width={200} height={200} className={imageStyling}/>
+                        <Image src="/apple1.png" alt="App Logo" width={200} height={200} className={imageStyling}/>
                     </button>
                     <h3 className={labelStyling}>Appletopia</h3>
                 </div>

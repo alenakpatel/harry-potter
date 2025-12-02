@@ -1,5 +1,5 @@
 "use client"
-
+import '../globals.css'
 import Image from "next/image";
 import Link from "next/link";
 import { Character } from "../lib/api";
@@ -16,7 +16,7 @@ export default function CharacterCard({ character }: { character: Character }) {
                         className="object-cover rounded"
                     />
                 </div>
-                <h3 className="font-bold text-xl text-center text-black">{character.name}</h3>
+                <h3 className="font-bold text-xl text-center text-black font-[MedievalSharp]">{character.name}</h3>
             </div>
         </Link>
     );

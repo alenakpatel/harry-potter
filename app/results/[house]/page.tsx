@@ -1,5 +1,5 @@
 "use client"
-
+import '../../globals.css'
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Character, getCharactersByHouse } from "../../lib/api";
@@ -41,46 +41,46 @@ export default function House() {
     const bgColor = houseColors[house] || "bg-gray-700";
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-white w-full">
             {/* Header */}
             <div className={`${bgColor} text-white py-16 text-center`}>
-                <h1 className="font-bold text-5xl mb-4">
+                <h1 className="font-bold text-5xl mb-4 font-[MedievalSharp]">
                     Welcome to {house}!
                 </h1>
-                <p className="text-xl">
+                <p className="text-xl font-[MedievalSharp]">
                     You've been sorted into House {house}
                 </p>
             </div>
 
             {/* Characters Section */}
-            <div className="container mx-auto px-4 py-12">
-                <h2 className="text-3xl font-bold text-center mb-8">
+            <div className="w-full px-4 py-12">
+                <h2 className="text-3xl font-bold text-center text-black font-[MedievalSharp]">
                     Notable {house} Members
                 </h2>
 
                 {loading && (
                     <div className="text-center py-12">
-                        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-                        <p className="mt-4 text-gray-600">Loading characters...</p>
+                        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-pink-950"></div>
+                        <p className="mt-4 text-black font-[MedievalSharp]">Loading characters...</p>
                     </div>
                 )}
 
                 {error && (
                     <div className="text-center py-12">
-                        <p className="text-red-600 text-xl">{error}</p>
+                        <p className="text-red-600 text-xl font-[MedievalSharp]">{error}</p>
                     </div>
                 )}
 
                 {!loading && !error && characters.length === 0 && (
                     <div className="text-center py-12">
-                        <p className="text-gray-600 text-xl">
+                        <p className="text-black text-xl font-[MedievalSharp]">
                             No characters found for {house}
                         </p>
                     </div>
                 )}
 
                 {!loading && !error && characters.length > 0 && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div className="pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
                         {characters.map((character) => (
                             <CharacterCard key={character.id} character={character} />
                         ))}
