@@ -1,4 +1,5 @@
 "use client"
+import './globals.css'
 import Link from "next/link";
 import {useState} from "react";
 import getSaved from "@/app/lib/getSaved";
@@ -16,26 +17,31 @@ export default function Home() {
     }
 
     return (
-        <>
+        <div className="bg-[url(/hogwarts.jpeg)] bg-cover h-[100vh] flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center">
+                <video width="470px" height="220px" muted autoPlay style={{marginBottom: '-110px'}}>
+                    <source src="/harry.webm" type="video/webm"/>
+                    Your browser does not support the video tag.
+                </video>
 
-            <div className="flex flex-row bg-[url(/hogwarts.jpeg)] bg-cover h-[100vh] ">
-                <div className="flex flex-col justify-center bg-pink-950 w-[25vw] h-[70%]">
-                    <p className="text-white">Enter your nickname to get a past result:</p>
-                    <input className="block! h-8 p-2 m-2! bg-white border-black"
-                           onChange={(e) => setNickname(e.target.value)} value={nickname}/>
-                    <button className="p-2 bg-white border-black" onClick={getResult}>Get Result</button>
+                <Link href="/quiz" className="bg-pink-950 text-white p-4 rounded font-[MedievalSharp] text-lg hover:bg-pink-900 cursor-pointer" style={{marginBottom: '40px'}}>
+                    Find out your House!
+                </Link>
+                <div className="flex flex-col items-center w-[300px]">
+                    <input
+                        className="w-full h-10 p-2 mb-2 bg-white border-2 border-black rounded text-center"
+                        placeholder="For Past Result: Enter Nickname"
+                        onChange={(e) => setNickname(e.target.value)}
+                        value={nickname}
+                    />
+                    <button
+                        className="w-full p-2 bg-pink-950 text-white border-2 border-pink-950 rounded font-[MedievalSharp] hover:bg-pink-900 cursor-pointer"
+                        onClick={getResult}
+                    >
+                        Get Result
+                    </button>
                 </div>
-                <div className="flex flex-row mx-auto! text-center!">
-
-                    <video width="470px" height="220px" muted autoPlay className="mx-auto! mt-0!">
-                        <source src="/harry.webm" type="video/webm"/>
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div className="flex flex-row my-auto!">
-                <Link href="/quiz" className="bg-pink-950 text-white h-10 my-1/2! p-4 m-4 rounded">Find out your House!</Link>
-                </div>
-                </div>
-        </>
+            </div>
+        </div>
     );
 }
