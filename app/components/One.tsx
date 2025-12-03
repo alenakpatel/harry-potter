@@ -5,18 +5,22 @@ import {useState} from "react";
 import Two from "../components/Two";
 
 
+export const imageStyling = "mx-10! w-[16vw]! h-[32vh]! inline! border-pink-950! rounded-t-md! border-6!  object-fill! hover:cursor-pointer!"
+export const labelStyling = "bg-pink-950! rounded-b-md! text-white! p-1! w-[16vw]! mx-auto! mb-10! font-bold! text-xl! "
+export const headerStyling = "block! bg-pink-950! text-white! py-5! mb-6! text-4xl! font-bold font-[MedievalSharp]!"
+export const divStyling = "flex flex-row justify-center items-center"
+
 export default function QuestionOne({value}: { value: number }) {
-    console.log(value)
-    const imageStyling = "mx-10! w-[16vw]! h-[32vh]! inline! border-pink-950! rounded-t-md! border-6!  object-fill! hover:cursor-pointer!"
-    const labelStyling = "bg-pink-950! rounded-b-md! text-white! p-1! w-[16vw]! mx-auto! mb-10! font-bold! text-xl! "
+
 
     const [score, setScore] = useState(value);
     const [nextQ, setNextQ] = useState(true);
-    console.log("nextQ", nextQ);
+
+
 
 
     function addScore(choice: number) {
-        console.log(choice);
+
         if (choice === 1) {
             setScore(value + 2);
         } else if (choice === 2) {
@@ -33,8 +37,8 @@ export default function QuestionOne({value}: { value: number }) {
 
     return (
         <>{nextQ ? <div className="text-center">
-                <h1 className="block! bg-pink-950! text-white! py-5! mb-6! text-4xl! font-bold font-[MedievalSharp]!">Choose a dessert</h1>
-                <div className="flex! flex-row! justify-center! items-center!">
+                <h1 className={headerStyling}>Choose a dessert</h1>
+                <div className={divStyling}>
                     <div className="inline!">
                         <button onClick={() => addScore(1)}>
                             <Image src="/cupcakes.jpg" alt="Strawberry Cupcakes" width={200} height={200}
@@ -49,7 +53,7 @@ export default function QuestionOne({value}: { value: number }) {
                         <h3 className={labelStyling}>Key Lime Pie</h3>
                     </div>
                 </div>
-                <div className="flex flex-row justify-center items-center">
+                <div className={divStyling}>
                     <div className="inline">
                         <button onClick={() => addScore(3)}>
                             <Image src="/icecream.jpg" alt="Ice Cream" width={200} height={200} className={imageStyling}/>

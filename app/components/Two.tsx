@@ -3,11 +3,10 @@
 import Image from "next/image";
 import {useState} from "react";
 import Three from "../components/Three";
+import {divStyling, headerStyling, imageStyling, labelStyling} from "@/app/components/One";
 
 
 export default function QuestionTwo({value}: { value: number }) {
-    const imageStyling = "mx-10! w-[16vw]! h-[32vh]! inline! border-pink-950! rounded-t-md! border-6! object-fill! hover:cursor-pointer!"
-    const labelStyling = "bg-pink-950! rounded-b-md! text-white! p-1! w-[16vw]! mx-auto! mb-10! font-bold! text-xl!"
 
     const [score, setScore] = useState(value);
     const [nextQ, setNextQ] = useState(true);
@@ -30,8 +29,8 @@ export default function QuestionTwo({value}: { value: number }) {
 
     return (
         <> {nextQ ? <div className="text-center">
-                <h1 className="block! bg-pink-950! text-white! py-5! mb-6! text-4xl! font-bold! font-[MedievalSharp]!">Select a season</h1>
-                <div className="flex! flex-row! justify-center! items-center!">
+                <h1 className={headerStyling}>Select a season</h1>
+                <div className={divStyling}>
                     <div className="inline!">
                         <button onClick={() => addScore(1)}>
                             <Image src="/spring.jpg" alt="Spring" width={200} height={200}
@@ -46,7 +45,7 @@ export default function QuestionTwo({value}: { value: number }) {
                         <h3 className={labelStyling}>Summer</h3>
                     </div>
                 </div>
-                <div className="flex flex-row justify-center items-center">
+                <div className={divStyling}>
                     <div className="inline">
                         <button onClick={() => addScore(3)}>
                             <Image src="/fall.jpg" alt="Fall" width={200} height={200} className={imageStyling}/>

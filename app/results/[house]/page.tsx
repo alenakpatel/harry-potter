@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Character, getCharactersByHouse } from "../../lib/api";
 import CharacterCard from "../../components/CharacterCard";
+import Link from "next/link";
+import NewResultForm from "@/app/components/NewResultForm";
 
 export default function House() {
     const params = useParams<{ house: string }>();
@@ -12,6 +14,7 @@ export default function House() {
     const [characters, setCharacters] = useState<Character[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [bool, setBool] = useState<boolean>(false);
 
     useEffect(() => {
         async function fetchCharacters() {
@@ -40,17 +43,23 @@ export default function House() {
 
     const bgColor = houseColors[house] || "bg-gray-700";
 
+
+
     return (
         <div className="min-h-screen bg-white w-full">
             {/* Header */}
-            <div className={`${bgColor} text-white py-16 text-center`}>
+            <div className={`${bgColor} text-white pt-16 pb-8 text-center`}>
                 <h1 className="font-bold text-5xl mb-4 font-[MedievalSharp]">
                     Welcome to {house}!
                 </h1>
-                <p className="text-xl font-[MedievalSharp]">
-                    You've been sorted into House {house}
+                <p className="text-xl font-[MedievalSharp] mb-10!">
+                    You&#39;ve been sorted into House {house}
                 </p>
-            </div>
+                <Link href="/" className="bg-black mt-50! text-white p-3 ">Take the quiz again</Link>
+                </div>
+
+            <button className={`${bgColor} text-white m-2! p-2 mx-auto! hover: cursor-pointer`} onClick={()=> {setBool(true)}}>Save your result</button>
+            {bool? <NewResultForm house={house}/>:null}
 
             {/* Characters Section */}
             <div className="w-full py-12 flex flex-col items-center">
