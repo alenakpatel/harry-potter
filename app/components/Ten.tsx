@@ -33,7 +33,7 @@ export default function QuestionTen({value}: { value: number }) {
 
     return (
         <div className="text-center">
-            <h1 className={headerStyling}>If the world was split into factions based on the technological powerhouses where would you want to live:</h1>
+            <h1 className="block! bg-pink-950! text-white! py-5! mb-6! text-3xl! font-bold font-[MedievalSharp]!">If the world was split into factions based on the technological powerhouses where would you want to live:</h1>
             <div className={divStyling}>
                 <div className="inline!">
                     <button onClick={() => addScore(1)}>

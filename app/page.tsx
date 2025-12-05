@@ -19,12 +19,12 @@ export default function Home() {
     return (
         <div className="bg-[url(/hogwarts.jpeg)] bg-cover h-[100vh] flex flex-col items-center justify-center">
             <div className="flex flex-col items-center">
-                <video width="470px" height="220px" muted autoPlay style={{marginBottom: '-100px', position: 'relative', zIndex: 1}}>
-                    <source src="/harry.webm" type="video/webm"/>
+                <video width="470px" height="220px" muted autoPlay style={{marginBottom: '-70px', position: 'relative', zIndex: 1}}>
+                    <source src="/potter.webm" type="video/webm"/>
                     Your browser does not support the video tag.
                 </video>
 
-                <Link href="/quiz" className="bg-pink-950 text-white p-4 rounded font-[MedievalSharp] text-lg hover:bg-pink-900 cursor-pointer" style={{marginBottom: '40px', position: 'relative', zIndex: 10}}>
+                <Link href="/quiz" className="bg-pink-950 text-white p-4 rounded font-[MedievalSharp] text-lg hover:bg-pink-900 cursor-pointer" style={{marginBottom: '55px', position: 'relative', zIndex: 10}}>
                     Find out your House!
                 </Link>
                 <div className="flex flex-col items-center w-[300px]">
