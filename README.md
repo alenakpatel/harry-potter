@@ -1,4 +1,7 @@
 # Harry Potter
+This project was developed collaboratively as part of a team assignment for Boston University’s CS 391: Web Application Development course. The goal was to...
+
+[Deployed Page](harry-potter-henna.vercel.app)
 
 ## Installation and Usage
 Follow these steps to set up the project locally: 
