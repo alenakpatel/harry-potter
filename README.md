@@ -1,7 +1,7 @@
 # Harry Potter
 This project was developed collaboratively as part of a team assignment for Boston University’s CS 391: Web Application Development course. This idea, inspired by Harry Potter, uses a card-selection game to help users discover their Hogwarts house and see which other members belong to it.
 
-[Deployed Page]([harry-potter-henna.vercel.app](https://harry-potter-henna.vercel.app/))
+[Deployed Page](https://harry-potter-henna.vercel.app/)
 
 ## Installation and Usage
 Follow these steps to set up the project locally: 
